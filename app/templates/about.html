@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block title %}About{% endblock title %}
+{% load static %}
+{% block contents %}
+
+
+<!-- About Section -->
+<section class="max-w-7xl mx-auto px-4 py-16 bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 ">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+        <img src="{% static 'img/about.jpg' %}" alt="About Us Image" class="rounded-lg shadow-lg">
+        <div>
+            <h2 class="text-3xl font-bold text-blue-500 mb-4">Our Mission</h2>
+            <p class="text-gray-600 leading-relaxed">
+                At Tech Shop, we aim to empower individuals and businesses with cutting-edge technology. Our mission is
+                to deliver exceptional products and services that enhance productivity, creativity, and everyday life.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Values Section -->
+<section class="bg-gray-200 py-16 bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 ">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold text-blue-500 mb-8">Our Values</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-blue-200 p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-bold text-gray-800 mb-4">Innovation</h3>
+                <p class="text-gray-600">We embrace innovation to bring the latest and most reliable technology to our
+                    customers.</p>
+            </div>
+            <div class="bg-blue-200 p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-bold text-gray-800 mb-4">Integrity</h3>
+                <p class="text-gray-600">We are committed to honesty, transparency, and ethical practices in everything
+                    we do.</p>
+            </div>
+            <div class="bg-blue-200 p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-bold text-gray-800 mb-4">Customer Focus</h3>
+                <p class="text-gray-600">Our customers are at the heart of everything we do. Their satisfaction is our
+                    top priority.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Section -->
+<section class="max-w-7xl mx-auto px-4 py-16 bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 ">
+    <h2 class="text-3xl font-bold text-center text-blue-500 mb-8">Meet Our Team</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center">
+            <img src="{% static 'img/ceo.png' %}" alt="Team Member" class="rounded-full border-4 border-blue-300 w-32 h-32 mx-auto mb-4">
+            <h3 class="text-xl font-bold text-gray-800">John Doe</h3>
+            <p class="text-gray-600">CEO</p>
+        </div>
+        <div class="text-center">
+            <img src="{% static 'img/pro1.avif' %}" alt="Team Member" class="rounded-full border-4 border-blue-300  w-32 h-32 mx-auto mb-4">
+            <h3 class="text-xl font-bold text-gray-800">Amelia Smith</h3>
+            <p class="text-gray-600">CTO</p>
+        </div>
+        <div class="text-center">
+            <img src="{% static 'img/pro2.avif' %}" alt="Team Member" class="rounded-full border-4 border-blue-300  w-32 h-32 mx-auto mb-4">
+            <h3 class="text-xl font-bold text-gray-800">Alice Johnson</h3>
+            <p class="text-gray-600">Head of Marketing</p>
+        </div>
+    </div>
+</section>
+
+{% endblock contents %}

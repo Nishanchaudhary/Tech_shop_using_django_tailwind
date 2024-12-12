@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home {% endblock title %}
+{% block contents %}
+
+<!-- Hero Section -->
+<section class="relative bg-cover bg-center h-screen"
+  style="background-image: url('{% static 'img/background_img.avif' %}');">
+  <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl font-extrabold text-blue-200 sm:text-5xl lg:text-6xl">
+        Welcome to <span class=" text-blue-200 ">Tech Shop</span>
+      </h1>
+      <p class="mt-4 text-lg leading-6 text-blue-200">
+        Discover the latest and greatest in technology, from gadgets to premium accessories.
+      </p>
+      <div class="mt-6 flex justify-center gap-4">
+        <a href="{% url 'product' %}" class="px-6 py-3 text-white bg-blue-500 rounded-lg shadow-lg hover:bg-blue-600">
+          Shop Now
+        </a>
+        <a href="{% url 'about' %}"
+          class="px-6 py-3 text-gray-200 border bg-slate-400 border-gray-300 rounded-lg hover:bg-blue-600">
+          Learn More
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Products -->
+<section id="products" class="py-12 bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-bold text-center text-blue-500">Featured Products</h2>
+    <p class="mt-2 text-center text-blue-600">Handpicked items for you</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+
+
+      <div class="bg-blue-200 shadow-lg rounded-lg overflow-hidden">
+        <img src="{% static 'img/resbery_pi.jpg' %}" alt="Product 1" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold text-gray-800">Raspberry Pi 5</h3>
+          <p class="text-gray-600 mt-2">Raspberry Pi 5 model is the latest release of Raspberry Pi range. In comparison
+            with its predecessor, it comes with a faster 2.4GHz Broadcom BCM2712, ARM Cortex-A76 CPU and VideoCore VII
+            GPU supporting OpenGL ES 3.1, Vulkan 1.2 and better heat dissipation.</p>
+          <div class="mt-4 flex justify-between items-center">
+            <span class="text-blue-500 font-bold text-lg">Rs. 5,002.92</span>
+            <a href="#" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="bg-blue-200 shadow-lg rounded-lg overflow-hidden">
+        <img src="{% static 'img/projecter.jpg' %}" alt="Product 2" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold text-gray-800">AuKing Projector</h3>
+          <p class="text-gray-600 mt-2">AuKing Projector, 2024 Upgraded Mini Projector, Full HD 1080P Home Theater Video Projector, Compatible with HDMI/USB/VGA/AV/Smartphone/TV Box/Laptop</p>
+          <div class="mt-4 flex justify-between items-center">
+            <span class="text-blue-500 font-bold text-lg">Rs. 10,000</span>
+            <a href="#" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Buy Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="bg-blue-200 shadow-lg rounded-lg overflow-hidden">
+        <img src="{% static 'img/keybord.jpg' %}" alt="Product 3" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold text-gray-800">Gaming Keyboard</h3>
+          <p class="text-gray-600 mt-2">Tastatur, 75%, compact TKL, AlienFX per-nøgle RGB/16,8 millioner farver, trådløs, USB, 2.4 GHz, Bluetooth 5.1, QWERTY, USA, tastkontakt: Alienware Linear Mechanical Switches (hot-swapbar), månelys</p>
+          <div class="mt-4 flex justify-between items-center">
+            <span class="text-blue-500 font-bold text-lg">Rs. 5000</span>
+            <a href="#" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Buy Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% endblock contents %}

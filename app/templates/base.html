@@ -1,0 +1,119 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECH SHOP | {% block title %}{% endblock title %}</title>
+    <link rel="icon" type="image/png" href="{% static 'img/Free.png' %}">
+    {% tailwind_css %}
+</head>
+
+<body class="bg-gray-100 font-serif ">
+    <!-- Navbar -->
+    <nav class="bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 border-b-2 border-blue-200  shadow-black sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+            <!-- Logo -->
+            <div class="flex-shrink-0">
+                <a href="#" class="flex items-center gap-2">
+                    <img src="{% static 'img/logo.png' %}" alt="Logo" class="w-12 h-12 rounded-full">
+                    <span class="text-2xl font-bold text-blue-600">TECH SHOP</span>
+                </a>
+            </div>
+            <!-- Links -->
+            <div class="hidden md:flex space-x-6">
+                <a href="{% url 'home' %}" class="text-gray-700 font-semibold hover:text-blue-500 ">Home</a>
+                <a href="{% url 'product' %}" class="text-gray-700 font-semibold hover:text-blue-500 ">Products</a>
+                <a href="{% url 'about' %}" class="text-gray-700 font-semibold hover:text-blue-500 ">About</a>
+                <a href="{% url 'contact' %}" class="text-gray-700 font-semibold hover:text-blue-500 ">Contact</a>
+            </div>
+            <!-- Cart & Profile -->
+            <div class="hidden md:flex space-x-4 items-center">
+                <button class="p-2 rounded-full bg-blue-100 hover:bg-blue-200">
+                   <img src="{% static 'img/cart.svg' %}" alt="cart" >
+                    <span class="">0</span>
+                </button>
+                <a href="#" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Sign In</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-btn" class="text-gray-600 hover:text-blue-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 5.25h16.5M3.75 12h16.5m-16.5 6.75h16.5" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border border-blue-200 bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 ">
+            <a href="{% url 'home' %}" class="block px-4 py-2 text-gray-700 hover:text-blue-500">Home</a>
+            <a href="{% url 'product' %}" class="block px-4 py-2 text-gray-700 hover:text-blue-500">Products</a>
+            <a href="{% url 'about' %}" class="block px-4 py-2 text-gray-700 hover:text-blue-500">About</a>
+            <a href="{% url 'contact' %}" class="block px-4 py-2 text-gray-700 hover:text-blue-500">Contact</a>
+        </div>
+    </nav>
+
+    {% block contents %}
+   
+    {% endblock contents %}
+
+    <!-- Footer -->
+    <footer class="text-gray-800 shadow-black border-t-2 border-blue-200 bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Logo and About -->
+            <div>
+                <h2 class="text-2xl font-bold mb-4 text-black  ">TECH SHOP</h2>
+                <p class=" text-gray-700 ">Your one-stop shop for premium tech products. Quality service and innovation at
+                    your fingertips.</p>
+            </div>
+
+            <!-- Links -->
+            <div>
+                <h3 class="text-xl font-semibold mb-4 text-black  ">Quick Links</h3>
+                <ul class="space-y-2 text-gray-700  ">
+                    <li><a href="{% url 'home' %}" class="hover:text-blue-400">Home</a></li>
+                    <li><a href="{% url 'product' %}" class="hover:text-blue-400">Products</a></li>
+                    <li><a href="{% url 'about' %}" class="hover:text-blue-400">About Us</a></li>
+                    <li><a href="{% url 'contact' %}" class="hover:text-blue-400">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Policies -->
+            <div>
+                <h3 class="text-xl font-semibold mb-4 text-black">Policies</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-blue-400 text-gray-700 ">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-blue-400 text-gray-700  ">Terms & Conditions</a></li>
+                    <li><a href="#" class="hover:text-blue-400 text-gray-700  ">Return Policy</a></li>
+                </ul>
+            </div>
+
+            <!-- Subscribe -->
+            <div>
+                <h3 class="text-xl font-semibold mb-4 text-black">Stay Connected</h3>
+                <p class="text-gray-700 mb-4">Subscribe to our newsletter for the latest updates and promotions.</p>
+                <form class="flex space-x-2">
+                    <input type="email" placeholder="Enter your email"
+                        class="w-full px-4 py-2 rounded-lg text-gray-700 bg-gray-200 focus:outline-none">
+                    <button type="submit"
+                        class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 py-4 text-center">
+            <p>&copy; <script>document.write(new Date().getFullYear());</script> TECH SHOP. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>
